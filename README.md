@@ -16,7 +16,8 @@ The dialog library uses native bindings for each platform:
 
 - **Windows**: No additional dependencies required.
 - **macOS**: No additional dependencies required.
-- **Linux**: Requires GTK+3.0 development libraries
+- **Linux**: Requires GTK+3.0 (if not already installed on your system, you can install the required packages depending on your distribution)
+
   ```bash
   # Ubuntu/Debian
   sudo apt-get install libgtk-3-dev
