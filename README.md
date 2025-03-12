@@ -20,10 +20,10 @@ The dialog library uses native bindings for each platform:
   ```bash
   # Ubuntu/Debian
   sudo apt-get install libgtk-3-dev
-  
+
   # Fedora
   sudo dnf install gtk3-devel
-  
+
   # Arch Linux
   sudo pacman -S gtk3
   ```
@@ -109,15 +109,15 @@ The confirm command returns exit code 0 if the user clicked "Yes" and exit code 
 # Ask for confirmation
 if dialog confirm "Do you want to continue?"; then
     echo "User chose YES"
-    
+
     # Select a file
     CONFIG_FILE=$(dialog file --title "Select configuration file")
     echo "Selected file: $CONFIG_FILE"
-    
+
     # Select an output directory
     OUTPUT_DIR=$(dialog directory --title "Select output directory")
     echo "Selected directory: $OUTPUT_DIR"
-    
+
     # Show success message
     dialog message "Operation completed successfully"
 else
@@ -128,4 +128,4 @@ fi
 
 ## License
 
-MIT 
+MIT
