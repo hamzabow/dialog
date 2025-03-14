@@ -26,6 +26,10 @@ jobs:
 
     - name: Build
       run: go build -v ./...
+      env:
+        GOOS: windows
 
     - name: Test
       run: go test -v ./...
+      env:
+        GOOS: windows
