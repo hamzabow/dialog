@@ -6,9 +6,9 @@ builds:
   - env:
       - CGO_ENABLED=0
     goos:
-      - linux
+      # - linux # commented out to avoid the github.com/sqweek/dialog package issues
       - windows
-      - darwin
+      # - Darwin # commented out to avoid the cocoa package issues
     goarch:
       - amd64
       - arm64
@@ -19,8 +19,10 @@ builds:
       - -X github.com/hamzabow/co/cmd.Date={{.Date}}
     flags:
       - -trimpath
+      - -tags=netgo
     main: ./main.go
     binary: co
+    # No need for ignore section since darwin is not in goos list
 
 archives:
   - format_overrides:
