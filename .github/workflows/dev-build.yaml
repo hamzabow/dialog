@@ -37,11 +37,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CGO_ENABLED: 0  # Disable CGO for better cross-compilation compatibility
 
+      - name: Set date
+        id: date
+        run: echo "DATE=$(date +'%Y%m%d%H%M')" >> $GITHUB_OUTPUT
+
       - name: Create/Update Development Release
         uses: softprops/action-gh-release@v1
         with:
           name: Development Build
-          tag_name: v0.0.0-dev.$(date +'%Y%m%d%H%M')
+          tag_name: v0.0.0-dev.${{ steps.date.outputs.DATE }}
           files: dist/*
           prerelease: true
           body: |
