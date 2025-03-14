@@ -24,5 +24,6 @@ package main
 import "github.com/hamzabow/dialog/cmd"
 
 func main() {
+	// Just a comment to test Github Actions
 	cmd.Execute()
 }
